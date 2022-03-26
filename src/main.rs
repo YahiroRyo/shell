@@ -15,6 +15,9 @@ fn main() {
         let mut input_line = String::new();
         stdin().read_line(&mut input_line)
             .expect("[ERROR] Faild to read a line.");
+        input_line = String::from(input_line.trim_end());
+        if input_line == "" { continue };
+        
         let command: Vec<&str> = input_line.split(' ').collect();
         let args = command
             .into_iter()
